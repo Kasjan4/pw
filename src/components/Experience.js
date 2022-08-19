@@ -11,6 +11,15 @@ import medicover from '../../src/img/medicover.png';
 import ga from '../../src/img/ga.png';
 
 const Experience = () => {
+  const title = (
+    <h2 className="grid-title">
+      Brands where I gained{' '}
+      <Fade delay={700}>
+        <span>experience</span>
+      </Fade>
+    </h2>
+  );
+
   const items = [
     { id: 1, href: 'https://www.haddad.com/', src: haddad, alt: 'Haddad', name: 'Haddad', empty: false },
     { id: 2, href: 'https://www.paypo.pl/', src: paypo, alt: 'PayPo', name: 'PayPo', empty: false },
@@ -33,15 +42,6 @@ const Experience = () => {
       empty: false,
     },
   ];
-
-  const title = (
-    <h2 className="grid-title">
-      Brands where I gained{' '}
-      <Fade delay={500}>
-        <span>experience</span>
-      </Fade>
-    </h2>
-  );
 
   return <Grid title={title} items={items} svg={false} />;
 };

@@ -59,7 +59,7 @@ const Contact = () => {
   return (
     <Fragment>
       <div className="contact-panel">
-        <Fade delay={500}>
+        <Fade delay={200}>
           <h2>Get in touch</h2>
         </Fade>
         <p>If you have enquiries regarding employment, my CV, or something else, I'm waiting for your message.</p>

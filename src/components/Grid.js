@@ -1,4 +1,5 @@
 import React, { useState, useEffect, Fragment } from 'react';
+import Fade from 'react-reveal/Fade';
 import PropTypes from 'prop-types';
 import { useMediaQuery } from 'react-responsive';
 
@@ -41,8 +42,13 @@ const Grid = ({ title, items, svg }) => {
           <div className="grid-item" key={item.id}>
             {!item.empty && (
               <a href={item.href} name={item.name} target="_blank" rel="noreferrer" className="grid-image">
-                {!svg && <img className="grid-image__png" src={item.src} alt={item.alt} />}
-                {svg && (item.localFile ? <img className="grid-image__svg" src={item.src} alt={item.alt} /> : item.src)}
+                <Fade delay={Math.floor(Math.random() * (1000 - 400 + 1) + 400)}>
+                  <>
+                    {!svg && <img className="grid-image__png" src={item.src} alt={item.alt} />}
+                    {svg &&
+                      (item.localFile ? <img className="grid-image__svg" src={item.src} alt={item.alt} /> : item.src)}
+                  </>
+                </Fade>
               </a>
             )}
           </div>

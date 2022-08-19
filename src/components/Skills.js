@@ -25,7 +25,7 @@ const Skills = () => {
   const title = (
     <h2 className="grid-title">
       The tools that I{' '}
-      <Fade delay={500}>
+      <Fade delay={200}>
         <span>work</span>
       </Fade>{' '}
       with
