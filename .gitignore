@@ -1,0 +1,4 @@
+dist
+/src/emailjs.js
+.DS_Store
+node_modules
