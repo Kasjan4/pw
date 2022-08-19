@@ -8,6 +8,7 @@ import paypo from '../../src/img/paypo.png';
 import delikatesy from '../../src/img/delikatesy.png';
 import baranski from '../../src/img/baranski.png';
 import medicover from '../../src/img/medicover.png';
+import ga from '../../src/img/ga.png';
 
 const Experience = () => {
   const items = [
@@ -23,6 +24,14 @@ const Experience = () => {
     },
     { id: 4, href: 'https://www.delikatesy.pl/', src: delikatesy, alt: 'Delikatesy', name: 'Delikatesy', empty: false },
     { id: 5, href: 'https://www.medicover.pl/', src: medicover, alt: 'Medicover', name: 'Medicover', empty: false },
+    {
+      id: 6,
+      href: 'https://generalassemb.ly/',
+      src: ga,
+      alt: 'General Assembly',
+      name: 'General Assembly',
+      empty: false,
+    },
   ];
 
   const title = (
