@@ -39,8 +39,8 @@ const Main = () => {
         <Skills />
       </Section>
       <Footer />
-      <Fade duration={300} when={showScrollToTop} bottom>
-        <div className="scroll-to-top" style={{ display: showScrollToTop ? 'block' : 'none' }}>
+      <Fade duration={300} when={showScrollToTop} spy={showScrollToTop} bottom>
+        <div className="scroll-to-top" style={{ pointerEvents: showScrollToTop ? 'auto' : 'none' }}>
           <Link to="kh" spy smooth duration={500} offset={-60}>
             {arrow}
           </Link>
