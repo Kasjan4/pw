@@ -1,5 +1,6 @@
 import React, { Fragment, useState } from 'react';
 import { scroller } from 'react-scroll';
+import { useMediaQuery } from 'react-responsive';
 import Fade from 'react-reveal/Fade';
 import ClipLoader from 'react-spinners/ClipLoader';
 import emailjs from 'emailjs-com';
@@ -17,6 +18,10 @@ const Contact = () => {
 
   const [showLoader, setShowLoader] = useState(false);
   const [formSubmitted, setFormSubmitted] = useState(false);
+
+  const isBreakpointL = useMediaQuery({
+    query: '(min-width: 992px)',
+  });
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -67,7 +72,7 @@ const Contact = () => {
                 label="email"
                 placeholder="yourname@email.com"
                 disabled={formSubmitted}
-                onFocus={handleInputOnFocus}
+                onFocus={isBreakpointL ? handleInputOnFocus : () => {}}
                 required
               />
             </div>
@@ -78,7 +83,7 @@ const Contact = () => {
                 label="message"
                 minLength="15"
                 disabled={formSubmitted}
-                onFocus={handleInputOnFocus}
+                onFocus={isBreakpointL ? handleInputOnFocus : () => {}}
                 required
               />
             </div>
