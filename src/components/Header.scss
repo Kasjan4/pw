@@ -1,0 +1,216 @@
+@import '../styles/mixins.scss';
+@import '../styles/variables.scss';
+
+.header {
+  position: fixed;
+  background-color: $color--black;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 81;
+
+  @include breakpoint('l') {
+    padding: 0 45px;
+  }
+
+  &__logo {
+    position: relative;
+    transition: color 100ms;
+    letter-spacing: 4px;
+    font-weight: 800;
+    font-size: 14px;
+
+    &::after {
+      content: '';
+      position: absolute;
+      transition: transform 400ms cubic-bezier(0.19, 1, 0.22, 1);
+      top: 50%;
+      left: -2px;
+      transform: scaleX(0);
+      width: 100%;
+      height: 1px;
+      background-color: $color--orange;
+      transform: scaleX(1);
+    }
+  }
+
+  &__nav {
+    position: relative;
+
+    &-item {
+      position: relative;
+      transition: color 100ms;
+      letter-spacing: 4px;
+      font-weight: 800;
+      font-size: 14px;
+      text-transform: uppercase;
+      color: $text-dimmed;
+      display: none;
+
+      &::after {
+        content: '';
+        position: absolute;
+        transition: transform 400ms cubic-bezier(0.19, 1, 0.22, 1);
+        top: 50%;
+        left: -2px;
+        transform: scaleX(0);
+        width: 100%;
+        height: 1px;
+        background-color: $color--orange;
+      }
+
+      &:not(:last-of-type) {
+        margin-right: 40px;
+      }
+
+      &:hover {
+        color: $color--white;
+      }
+
+      &--active {
+        color: $color--white;
+
+        &::after {
+          transform: scaleX(1);
+        }
+      }
+
+      @include breakpoint('l') {
+        display: inline;
+      }
+    }
+  }
+
+  .nav__toggle {
+    position: relative;
+    cursor: pointer;
+    color: $color--white;
+    width: 22px;
+    height: 22px;
+    display: block;
+
+    @include breakpoint('l') {
+      display: none;
+    }
+
+    &-big,
+    &-small {
+      position: absolute;
+      width: 22px;
+      height: 2px;
+      background-color: #fff;
+      transition: transform 170ms ease-in-out;
+    }
+
+    &-big {
+      top: 5px;
+      right: 0;
+      left: 0;
+      transform-origin: center;
+    }
+
+    &-small {
+      top: 15px;
+      right: 0;
+      left: 0;
+      transform-origin: center right;
+    }
+  }
+
+  img {
+    width: 112px;
+    height: auto;
+  }
+}
+
+.nav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 80;
+  background-color: $color--black;
+  transition: transform 200ms ease-in-out;
+  overflow: hidden;
+
+  &__item {
+    position: relative;
+    color: $color--white;
+    display: block;
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    transform-origin: center left;
+    margin-bottom: 20px;
+
+    @include breakpoint('m') {
+      margin-bottom: 40px;
+    }
+
+    &:before {
+      position: absolute;
+      top: 40%;
+      right: 0;
+      left: 0;
+      background-color: $color--orange;
+      content: '';
+      transition: transform 200ms;
+      height: 4px;
+      border-radius: 4px;
+      transform: scaleX(0);
+      transform-origin: center left;
+    }
+
+    &-wrapper {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      flex-direction: column;
+      padding-left: 1.33rem;
+      background-color: $color--black;
+    }
+  }
+
+  &__footer {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+    display: flex;
+    justify-content: flex-end;
+    transition: transform 370ms ease-in-out;
+    transition-delay: 0.2s;
+
+    .social-icons {
+      padding: 0;
+      width: auto;
+
+      .social-icon {
+        transition: transform 0.2s ease-out;
+        display: inline-flex;
+        margin-right: 20px;
+        min-width: 22px;
+        min-height: 22px;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+}
+
+.nav__item:hover:before,
+.nav__item:focus:before,
+.nav__item.nav__item--active:before {
+  transform: scaleX(1);
+}

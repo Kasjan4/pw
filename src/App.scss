@@ -1,0 +1,87 @@
+@import '../src/styles/variables.scss';
+
+@font-face {
+  font-family: 'Proxima Nova';
+  font-style: normal;
+  font-weight: 100;
+  src: url('./fonts/100.otf') format('otf');
+}
+
+@font-face {
+  font-family: 'Proxima Nova';
+  font-style: normal;
+  font-weight: 400;
+  src: url('./fonts/200.otf') format('otf');
+}
+
+@font-face {
+  font-family: 'Proxima Nova';
+  font-style: normal;
+  font-weight: 800;
+  src: url('./fonts/300.otf') format('otf');
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  padding: 0;
+  font-weight: 100;
+}
+
+h1,
+h2 {
+  line-height: 1.4;
+}
+
+p {
+  font-size: 16px;
+}
+
+span {
+  font-weight: 800;
+}
+
+input,
+textarea {
+  background-color: #151515;
+  border: 1px solid #fff;
+
+  &:focus {
+    outline: none;
+    border: 1px solid $color--orange;
+  }
+
+  &:active {
+    border: 1px solid $color--orange;
+  }
+
+  &:disabled {
+    border: 1px solid #fff;
+  }
+}
+
+button {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+  text-transform: uppercase;
+}
+
+a {
+  transition: color 200ms, opacity 200ms;
+  cursor: pointer;
+  color: $color--white;
+}
+
+.app {
+  overflow: hidden;
+}

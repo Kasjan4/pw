@@ -1,0 +1,29 @@
+@import '../styles/mixins.scss';
+
+.main {
+  margin-top: 60px;
+
+  .scroll-to-top {
+    display: none;
+
+    @include breakpoint('l') {
+      display: block;
+      position: fixed;
+      bottom: 80px;
+      right: 100px;
+    }
+
+    svg {
+      display: none;
+
+      @include breakpoint('l') {
+        display: block;
+        opacity: 0.4;
+
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
