@@ -184,14 +184,14 @@ const Header = () => {
             <div className="social-icons">
               <Bounce when={toggleOpen} duration={1250} delay={200} bottom>
                 <div className="social-icon">
-                  <a href="https://www.linkedin.com/in/kasjan-hinc/" target="_blank" rel="noreferrer">
+                  <a href="https://www.linkedin.com/in/kasjan-hinc/" name="LinkedIn" target="_blank" rel="noreferrer">
                     {linkedin}
                   </a>
                 </div>
               </Bounce>
               <Bounce when={toggleOpen} duration={1250} delay={300} bottom>
                 <div className="social-icon">
-                  <a href="https://github.com/Kasjan4" target="_blank" rel="noreferrer">
+                  <a href="https://github.com/Kasjan4" name="GitHub" target="_blank" rel="noreferrer">
                     {github}
                   </a>
                 </div>

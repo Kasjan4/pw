@@ -5,17 +5,13 @@ import Fade from 'react-reveal/Fade';
 import ClipLoader from 'react-spinners/ClipLoader';
 import emailjs from 'emailjs-com';
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLinkedinIn, faGithub } from '@fortawesome/free-brands-svg-icons';
+import Socials from './Socials';
 
 import { apiKeys } from '../emailjs';
 
 import './Contact.scss';
 
 const Contact = () => {
-  const linkedin = <FontAwesomeIcon icon={faLinkedinIn} size="2x" />;
-  const github = <FontAwesomeIcon icon={faGithub} size="2x" />;
-
   const [showLoader, setShowLoader] = useState(false);
   const [formSubmitted, setFormSubmitted] = useState(false);
 
@@ -97,18 +93,7 @@ const Contact = () => {
           </div>
         </form>
       </div>
-      <div className="social-icons">
-        <div className="social-icon">
-          <a href="https://www.linkedin.com/in/kasjan-hinc/" target="_blank" rel="noreferrer">
-            {linkedin}
-          </a>
-        </div>
-        <div className="social-icon">
-          <a href="https://github.com/Kasjan4" target="_blank" rel="noreferrer">
-            {github}
-          </a>
-        </div>
-      </div>
+      <Socials />
     </Fragment>
   );
 };
