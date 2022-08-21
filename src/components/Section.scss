@@ -10,14 +10,13 @@
 }
 
 .skills,
-.contact,
 .experience {
   margin: 0 auto;
   padding: 45px 32px;
   max-width: 950px;
 
   @include breakpoint('xl') {
-    padding: 64px 32px 80px;
+    padding: 60px 32px 80px;
   }
 }
 
@@ -31,10 +30,15 @@
 
 .contact {
   text-align: center;
-}
+  margin: 0 auto;
+  max-width: 950px;
+  padding: 60px 32px 100px;
 
-.skills {
+  @include breakpoint('xs') {
+    padding: 60px 32px 200px;
+  }
+
   @include breakpoint('m') {
-    padding: 64px 32px 310px;
+    padding: 60px 32px 250px;
   }
 }

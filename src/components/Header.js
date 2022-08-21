@@ -58,9 +58,20 @@ const Header = () => {
               spy
               smooth
               duration={500}
-              offset={-60}
+              offset={-100}
             >
               KH
+            </Link>
+            <Link
+              className="header__nav-item"
+              activeClass="header__nav-item--active"
+              to="skills"
+              spy
+              smooth
+              duration={500}
+              offset={-100}
+            >
+              Skills
             </Link>
             <Link
               className="header__nav-item"
@@ -69,7 +80,7 @@ const Header = () => {
               spy
               smooth
               duration={500}
-              offset={-60}
+              offset={-100}
             >
               Experience
             </Link>
@@ -80,20 +91,9 @@ const Header = () => {
               spy
               smooth
               duration={500}
-              offset={-60}
+              offset={-100}
             >
               Contact
-            </Link>
-            <Link
-              className="header__nav-item"
-              activeClass="header__nav-item--active"
-              to="skills"
-              spy
-              smooth
-              duration={500}
-              offset={-60}
-            >
-              Skills
             </Link>
           </nav>
         </Fade>
@@ -142,6 +142,20 @@ const Header = () => {
             <Link
               className="nav__item"
               activeClass="nav__item--active"
+              to="skills"
+              spy
+              smooth
+              duration={500}
+              offset={-60}
+              onClick={(e) => handleToggle(e)}
+            >
+              Skills
+            </Link>
+          </Fade>
+          <Fade appear when={toggleOpen} delay={200} left>
+            <Link
+              className="nav__item"
+              activeClass="nav__item--active"
               to="experience"
               spy
               smooth
@@ -164,20 +178,6 @@ const Header = () => {
               onClick={(e) => handleToggle(e)}
             >
               Contact
-            </Link>
-          </Fade>
-          <Fade appear when={toggleOpen} delay={200} left>
-            <Link
-              className="nav__item"
-              activeClass="nav__item--active"
-              to="skills"
-              spy
-              smooth
-              duration={500}
-              offset={-60}
-              onClick={(e) => handleToggle(e)}
-            >
-              Skills
             </Link>
           </Fade>
           <footer className="nav__footer">

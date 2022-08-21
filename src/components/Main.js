@@ -29,14 +29,14 @@ const Main = () => {
       <Section className="kh" id="kh" name="kh">
         <About />
       </Section>
+      <Section className="skills" id="skills" name="skills">
+        <Skills />
+      </Section>
       <Section className="experience" id="experience" name="experience">
         <Experience />
       </Section>
       <Section className="contact" id="contact" name="contact">
         <Contact />
-      </Section>
-      <Section className="skills" id="skills" name="skills">
-        <Skills />
       </Section>
       <Footer />
       <Fade duration={300} when={showScrollToTop} spy={showScrollToTop} bottom>
