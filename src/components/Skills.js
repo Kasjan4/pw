@@ -4,23 +4,22 @@ import Fade from 'react-reveal/Fade';
 import Grid from './Grid';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSatelliteDish } from '@fortawesome/free-solid-svg-icons';
-import { faHtml5, faCss3, faJs, faReact, faGithub, faNodeJs } from '@fortawesome/free-brands-svg-icons';
+import { faHtml5, faCss3, faJs, faReact, faGitAlt, faNodeJs } from '@fortawesome/free-brands-svg-icons';
 
 import reduxSVG from '../img/redux.svg';
 import jQuerySVG from '../img/jquery.svg';
 import typescriptSVG from '../img/typescript.svg';
 import rwdSVG from '../img/rwd.svg';
 import seoSVG from '../img/seo.svg';
+import apiSVG from '../img/api.svg';
 
 const Skills = () => {
   const js = <FontAwesomeIcon icon={faJs} size="4x" />;
   const html = <FontAwesomeIcon icon={faHtml5} size="4x" />;
   const css = <FontAwesomeIcon icon={faCss3} size="4x" />;
   const react = <FontAwesomeIcon icon={faReact} size="4x" />;
-  const git = <FontAwesomeIcon icon={faGithub} size="4x" />;
+  const git = <FontAwesomeIcon icon={faGitAlt} size="4x" />;
   const node = <FontAwesomeIcon icon={faNodeJs} size="4x" />;
-  const api = <FontAwesomeIcon icon={faSatelliteDish} size="4x" />;
 
   const title = (
     <h2 className="grid-title">
@@ -72,10 +71,10 @@ const Skills = () => {
     {
       id: 8,
       href: 'https://en.wikipedia.org/wiki/Representational_state_transfer',
-      src: api,
+      src: apiSVG,
       alt: 'REST API',
       name: 'REST API',
-      localFile: false,
+      localFile: true,
     },
     {
       id: 9,
