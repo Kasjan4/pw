@@ -1,4 +1,5 @@
 import React from 'react';
+import Pulse from 'react-reveal/Pulse';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedinIn, faGithub } from '@fortawesome/free-brands-svg-icons';
@@ -9,16 +10,20 @@ const Socials = () => {
 
   return (
     <div className="social-icons">
-      <div className="social-icon">
-        <a href="https://www.linkedin.com/in/kasjan-hinc/" name="LinkedIn" target="_blank" rel="noreferrer">
-          {linkedin}
-        </a>
-      </div>
-      <div className="social-icon">
-        <a href="https://github.com/Kasjan4" name="GitHub" target="_blank" rel="noreferrer">
-          {github}
-        </a>
-      </div>
+      <Pulse delay={200}>
+        <div className="social-icon">
+          <a href="https://www.linkedin.com/in/kasjan-hinc/" name="LinkedIn" target="_blank" rel="noreferrer">
+            {linkedin}
+          </a>
+        </div>
+      </Pulse>
+      <Pulse delay={400}>
+        <div className="social-icon">
+          <a href="https://github.com/Kasjan4" name="GitHub" target="_blank" rel="noreferrer">
+            {github}
+          </a>
+        </div>
+      </Pulse>
     </div>
   );
 };

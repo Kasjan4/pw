@@ -35,9 +35,11 @@ const Main = () => {
       <Section className="experience" id="experience" name="experience">
         <Experience />
       </Section>
-      <Section className="contact" id="contact" name="contact">
-        <Contact />
-      </Section>
+      <Fade left distance="100px">
+        <Section className="contact" id="contact" name="contact">
+          <Contact />
+        </Section>
+      </Fade>
       <Footer />
       <Fade duration={300} when={showScrollToTop} spy={showScrollToTop} bottom>
         <div className="scroll-to-top" style={{ pointerEvents: showScrollToTop ? 'auto' : 'none' }}>
