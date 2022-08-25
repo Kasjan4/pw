@@ -4,6 +4,8 @@ import { useMediaQuery } from 'react-responsive';
 import Fade from 'react-reveal/Fade';
 import ClipLoader from 'react-spinners/ClipLoader';
 import emailjs from 'emailjs-com';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPaperPlane, faCheck } from '@fortawesome/free-solid-svg-icons';
 
 import Socials from './Socials';
 
@@ -14,6 +16,9 @@ import './Contact.scss';
 const Contact = () => {
   const [showLoader, setShowLoader] = useState(false);
   const [formSubmitted, setFormSubmitted] = useState(false);
+
+  const submit = <FontAwesomeIcon icon={faPaperPlane} size="2x" />;
+  const check = <FontAwesomeIcon icon={faCheck} size="2x" />;
 
   const isBreakpointL = useMediaQuery({
     query: '(min-width: 992px)',
@@ -66,6 +71,8 @@ const Contact = () => {
                 type="email"
                 name="email"
                 label="email"
+                minLength="6"
+                maxLength="50"
                 placeholder="yourname@email.com"
                 disabled={formSubmitted}
                 onFocus={isBreakpointL ? handleInputOnFocus : () => {}}
@@ -78,6 +85,7 @@ const Contact = () => {
                 name="message"
                 label="message"
                 minLength="15"
+                maxLength="500"
                 disabled={formSubmitted}
                 onFocus={isBreakpointL ? handleInputOnFocus : () => {}}
                 required
@@ -88,7 +96,7 @@ const Contact = () => {
 
             <button className="input" type="submit">
               {showLoader && <ClipLoader color="#ffffff" loading size={30} />}
-              {!showLoader && (formSubmitted ? 'Message has been sent' : 'Send')}
+              {!showLoader && (formSubmitted ? check : submit)}
             </button>
           </div>
         </form>
