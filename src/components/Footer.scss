@@ -24,19 +24,20 @@ footer:not(.nav__footer) {
 
 .footer__copyright {
   color: $text-dimmed;
+  font-size: 0.875rem;
   text-align: center;
   border-top: 1px solid #151515;
   padding-top: 20px;
   margin-bottom: 12px;
-  font-size: 14px;
 }
 
 .footer__legend {
   color: rgba(255, 255, 255, 0.6);
   padding-bottom: 20px;
   height: auto;
-  font-size: 10px;
+  font-size: 0.625rem;
   text-transform: uppercase;
+  font-size: 0.875rem;
 
   span {
     position: relative;

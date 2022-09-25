@@ -2,23 +2,23 @@
 @import '../styles/variables.scss';
 
 .grid-title {
+  font-size: 1rem;
   max-width: 310px;
   margin-bottom: 32px;
   text-transform: uppercase;
   text-align: center;
   letter-spacing: 6px;
-  font-size: 16px;
   margin-left: auto;
   margin-right: auto;
   padding: 0 20px;
 
   @include breakpoint('xs') {
-    font-size: 18px;
+    font-size: 1.125rem;
   }
 
   @include breakpoint('s') {
     max-width: initial;
-    font-size: 24px;
+    font-size: 1.5rem;
   }
 }
 

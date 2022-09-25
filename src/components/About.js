@@ -34,9 +34,7 @@ const About = () => {
         &nbsp;my name is
       </p>
       <Fade delay={200}>
-        <h1>
-          <span>Kasjan</span> Hinc
-        </h1>
+        <h1>Kasjan Hinc</h1>
       </Fade>
       <Fade delay={500} down>
         <p>

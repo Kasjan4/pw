@@ -4,21 +4,28 @@
   font-family: 'Proxima Nova';
   font-style: normal;
   font-weight: 100;
-  src: url('./fonts/100.otf') format('otf');
+  src: url('./fonts/100.woff') format('woff');
 }
 
 @font-face {
   font-family: 'Proxima Nova';
   font-style: normal;
-  font-weight: 400;
-  src: url('./fonts/200.otf') format('otf');
+  font-weight: 200;
+  src: url('./fonts/200.woff') format('woff');
 }
 
 @font-face {
   font-family: 'Proxima Nova';
   font-style: normal;
-  font-weight: 800;
-  src: url('./fonts/300.otf') format('otf');
+  font-weight: 300;
+  src: url('./fonts/300.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Exotic';
+  font-style: normal;
+  font-weight: 100;
+  src: url('./fonts/exotic.woff') format('woff');
 }
 
 h1,
@@ -33,13 +40,19 @@ p {
   font-weight: 100;
 }
 
-h1,
+h1 {
+  font-weight: 100;
+  line-height: 1;
+}
+
 h2 {
-  line-height: 1.4;
+  letter-spacing: 6px;
+  font-weight: 200;
 }
 
 p {
-  font-size: 16px;
+  font-size: 1rem;
+  letter-spacing: 6px;
 }
 
 span {
