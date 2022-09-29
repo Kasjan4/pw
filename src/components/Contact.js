@@ -1,6 +1,7 @@
 import React, { Fragment, useState } from 'react';
 import { scroller } from 'react-scroll';
 import { useMediaQuery } from 'react-responsive';
+import { CopyToClipboard } from 'react-copy-to-clipboard';
 import Fade from 'react-reveal/Fade';
 import ClipLoader from 'react-spinners/ClipLoader';
 import emailjs from 'emailjs-com';
@@ -16,9 +17,11 @@ import './Contact.scss';
 const Contact = () => {
   const [showLoader, setShowLoader] = useState(false);
   const [formSubmitted, setFormSubmitted] = useState(false);
+  const [emailCopied, setEmailCopied] = useState(false);
 
   const submit = <FontAwesomeIcon icon={faPaperPlane} size="2x" />;
   const check = <FontAwesomeIcon icon={faCheck} size="2x" />;
+  const smallCheck = <FontAwesomeIcon icon={faCheck} size="1x" />;
 
   const isBreakpointL = useMediaQuery({
     query: '(min-width: 992px)',
@@ -100,6 +103,17 @@ const Contact = () => {
             </button>
           </div>
         </form>
+        <p>or</p>
+        <CopyToClipboard onCopy={() => setEmailCopied(true)} text="kasjan.hinc@gmail.com">
+          <button
+            className="copy-to-clipboard"
+            style={{ cursor: emailCopied ? 'default' : 'pointer' }}
+            disabled={emailCopied}
+          >
+            {emailCopied ? 'email copied to clipboard' : 'copy email to clipboard'}
+            {emailCopied && smallCheck}
+          </button>
+        </CopyToClipboard>
       </div>
       <Socials />
     </Fragment>
