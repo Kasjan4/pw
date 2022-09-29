@@ -31,16 +31,27 @@ const About = () => {
           key={stopped}
           loop
         />
-        &nbsp;my name is
+        <Fade delay={200}>
+          <span>&nbsp;my name is</span>
+        </Fade>
       </p>
+
       <Fade delay={200}>
         <h1>Kasjan Hinc</h1>
       </Fade>
-      <Fade delay={500} down>
-        <p>
-          Software <span>Developer</span>
-        </p>
-      </Fade>
+
+      <div className="role-container">
+        <span>
+          <Fade delay={500} left>
+            Software
+          </Fade>
+        </span>
+        <span>
+          <Fade delay={500} right>
+            Developer
+          </Fade>
+        </span>
+      </div>
 
       <Socials />
     </Fragment>
