@@ -1,5 +1,4 @@
 import React from 'react';
-import Fade from 'react-reveal/Fade';
 
 import Grid from './Grid';
 
@@ -23,11 +22,7 @@ const Skills = () => {
 
   const title = (
     <h2 className="grid-title">
-      The tools that I{' '}
-      <Fade delay={200}>
-        <span>work</span>
-      </Fade>{' '}
-      with
+      The tools that I <span>work</span> with
     </h2>
   );
 

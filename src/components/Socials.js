@@ -4,6 +4,8 @@ import Pulse from 'react-reveal/Pulse';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedinIn, faGithub } from '@fortawesome/free-brands-svg-icons';
 
+import './Socials.scss';
+
 const Socials = () => {
   const linkedin = <FontAwesomeIcon icon={faLinkedinIn} size="2x" />;
   const github = <FontAwesomeIcon icon={faGithub} size="2x" />;

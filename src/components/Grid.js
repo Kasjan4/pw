@@ -42,7 +42,7 @@ const Grid = ({ title, items, svg }) => {
           <div className="grid-item" key={item.id}>
             {!item.empty && (
               <a href={item.href} name={item.name} target="_blank" rel="noreferrer" className="grid-image">
-                <Fade delay={isBreakpointS ? Math.floor(Math.random() * (1000 - 400 + 1) + 400) : 0}>
+                <Fade delay={isBreakpointS ? Math.floor(Math.random() * (500 - 200 + 1) + 200) : 0}>
                   <>
                     {!svg && <img className="grid-image__png" src={item.src} alt={item.alt} />}
                     {svg &&

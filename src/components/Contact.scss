@@ -59,7 +59,7 @@
           color: $color--white;
           font-size: 1.25rem;
           padding: 0 20px;
-          border-radius: 30px;
+          border-radius: 5px;
         }
 
         input {
@@ -86,7 +86,7 @@
         font-size: 0.875rem;
         font-weight: 800;
         padding: 0 20px;
-        border-radius: 30px;
+        border-radius: 5px;
         background-color: #f05d18;
         border: 0;
         margin-bottom: 16px;
@@ -107,35 +107,5 @@
   .copy-to-clipboard svg {
     color: #15c715;
     padding-left: 5px;
-  }
-}
-
-.social-icons {
-  display: flex;
-  justify-content: center;
-
-  .social-icon {
-    transition: transform 0.2s ease-out;
-    display: inline-flex;
-    margin-right: 20px;
-    min-width: 22px;
-    min-height: 22px;
-    justify-content: center;
-    align-items: center;
-
-    &:last-of-type {
-      margin-right: 0;
-    }
-
-    svg {
-      color: $text-dimmed;
-
-      @include breakpoint('xl') {
-        &:hover {
-          color: $color--orange;
-          transition: 200ms ease;
-        }
-      }
-    }
   }
 }

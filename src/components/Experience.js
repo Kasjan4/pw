@@ -1,5 +1,4 @@
 import React from 'react';
-import Fade from 'react-reveal/Fade';
 
 import Grid from './Grid';
 
@@ -13,10 +12,7 @@ import ga from '../../src/img/ga.png';
 const Experience = () => {
   const title = (
     <h2 className="grid-title">
-      Brands where I gained{' '}
-      <Fade delay={700}>
-        <span>experience</span>
-      </Fade>
+      Brands where I gained <span>experience</span>
     </h2>
   );
 
