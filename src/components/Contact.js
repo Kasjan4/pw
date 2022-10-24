@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from 'react';
+import React, { Fragment, useState, useEffect } from 'react';
 import { scroller } from 'react-scroll';
 import { useMediaQuery } from 'react-responsive';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
@@ -17,6 +17,7 @@ import './Contact.scss';
 const Contact = () => {
   const [showLoader, setShowLoader] = useState(false);
   const [formSubmitted, setFormSubmitted] = useState(false);
+  const [formData, setFormData] = useState(null);
   const [emailCopied, setEmailCopied] = useState(false);
 
   const submit = <FontAwesomeIcon icon={faPaperPlane} size="2x" />;
@@ -32,25 +33,30 @@ const Contact = () => {
 
     const isChecked = document.getElementById('checkbox').checked;
 
-    if (isChecked) return;
-
+    if (formSubmitted || isChecked) return;
+    setFormData(e.target);
+    setFormSubmitted(true);
     setShowLoader(true);
-
-    emailjs.sendForm(apiKeys.serviceID, apiKeys.templateID, e.target, apiKeys.userID).then(
-      () => {
-        document.getElementById('form').reset();
-        setShowLoader(false);
-        setFormSubmitted(true);
-
-        setTimeout(() => {
-          setFormSubmitted(false);
-        }, 5000);
-      },
-      (error) => {
-        console.log(error);
-      },
-    );
   };
+
+  useEffect(() => {
+    if (formSubmitted) {
+      emailjs.sendForm(apiKeys.serviceID, apiKeys.templateID, formData, apiKeys.userID).then(
+        () => {
+          document.getElementById('form').reset();
+          setShowLoader(false);
+
+          setTimeout(() => {
+            setFormData(null);
+            setFormSubmitted(false);
+          }, 5000);
+        },
+        (error) => {
+          console.log(error);
+        },
+      );
+    }
+  }, [formSubmitted]);
 
   const handleInputOnFocus = () =>
     scroller.scrollTo('contact', {
@@ -97,7 +103,7 @@ const Contact = () => {
 
             <input type="checkbox" id="checkbox" name="Terms" />
 
-            <button className="input" type="submit">
+            <button className="input" type="submit" disabled={formSubmitted}>
               {showLoader && <ClipLoader color="#ffffff" loading size={30} />}
               {!showLoader && (formSubmitted ? check : submit)}
             </button>
