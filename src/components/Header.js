@@ -7,6 +7,7 @@ import { lock, unlock } from 'tua-body-scroll-lock';
 import { useMediaQuery } from 'react-responsive';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCircle } from '@fortawesome/free-solid-svg-icons';
 import { faLinkedinIn, faGithub } from '@fortawesome/free-brands-svg-icons';
 
 import './Header.scss';
@@ -19,6 +20,7 @@ const Header = () => {
     query: '(max-width: 992px)',
   });
 
+  const dot = <FontAwesomeIcon icon={faCircle} size="xs" />;
   const linkedin = <FontAwesomeIcon icon={faLinkedinIn} size="2x" />;
   const github = <FontAwesomeIcon icon={faGithub} size="2x" />;
 
@@ -52,15 +54,15 @@ const Header = () => {
         <Fade delay={200} top>
           <nav className="header__nav">
             <Link
-              className="header__nav-item"
-              activeClass="header__nav-item--active"
+              className="header__nav-item--dot"
+              activeClass="header__nav-item--dot--active"
               to="kh"
               spy
               smooth
               duration={500}
               offset={-100}
             >
-              KH
+              {dot}
             </Link>
             <Link
               className="header__nav-item"
@@ -126,16 +128,15 @@ const Header = () => {
         <nav className="nav__item-wrapper">
           <Fade appear when={toggleOpen} left>
             <Link
-              className="nav__item"
-              activeClass="nav__item--active"
+              className="nav__item--dot"
+              activeClass="nav__item--dot--active"
               to="kh"
               spy
               smooth
               duration={500}
               offset={-60}
-              onClick={(e) => handleToggle(e)}
             >
-              KH
+              {dot}
             </Link>
           </Fade>
           <Fade appear when={toggleOpen} delay={200} left>

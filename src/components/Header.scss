@@ -19,28 +19,48 @@
   }
 
   &__logo {
+    font-family: 'Exotic', 'Helvetica', arial, sans-serif;
+    background: #ffb76b;
+    background: radial-gradient(
+      circle farthest-side at center center,
+      #ffb76b 0%,
+      #ffa73d 30%,
+      #ff671f 60%,
+      #ff7f04 100%
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     position: relative;
-    font-size: 1rem;
+    font-size: 2rem;
     transition: color 100ms;
     letter-spacing: 4px;
     font-weight: 800;
-
-    &::after {
-      content: '';
-      position: absolute;
-      transition: transform 400ms cubic-bezier(0.19, 1, 0.22, 1);
-      top: 50%;
-      left: -2px;
-      transform: scaleX(0);
-      width: 100%;
-      height: 1px;
-      background-color: $color--orange;
-      transform: scaleX(1);
-    }
   }
 
   &__nav {
     position: relative;
+
+    &-item--dot {
+      font-size: 1rem;
+      pointer-events: none;
+      position: relative;
+      transition: color 100ms;
+      letter-spacing: 4px;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: $color--orange;
+      display: none;
+      margin-right: 40px;
+
+      &--active {
+        display: inline;
+      }
+
+      @media (max-width: $breakpoint--l) {
+        display: none;
+      }
+    }
 
     &-item {
       font-size: 1rem;
@@ -60,7 +80,7 @@
         left: -2px;
         transform: scaleX(0);
         width: 100%;
-        height: 1px;
+        height: 2px;
         background-color: $color--orange;
       }
 
@@ -138,6 +158,23 @@
   background-color: $color--black;
   transition: transform 200ms ease-in-out;
   overflow: hidden;
+
+  &__item--dot {
+    display: none;
+    position: relative;
+    color: $color--orange;
+    pointer-events: none;
+    font-size: 1.375rem;
+    font-weight: 800;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    transform-origin: center left;
+    margin-bottom: 20px;
+
+    &--active {
+      display: block;
+    }
+  }
 
   &__item {
     position: relative;
