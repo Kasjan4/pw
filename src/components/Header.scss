@@ -40,6 +40,7 @@
 
   &__nav {
     position: relative;
+    display: flex;
 
     &-item--dot {
       font-size: 1rem;
@@ -50,12 +51,7 @@
       font-weight: 800;
       text-transform: uppercase;
       color: $color--orange;
-      display: none;
       margin-right: 40px;
-
-      &--active {
-        display: inline;
-      }
 
       @media (max-width: $breakpoint--l) {
         display: none;
@@ -71,6 +67,7 @@
       text-transform: uppercase;
       color: $text-dimmed;
       display: none;
+      margin-right: 40px;
 
       &::after {
         content: '';
@@ -82,10 +79,6 @@
         width: 100%;
         height: 2px;
         background-color: $color--orange;
-      }
-
-      &:not(:last-of-type) {
-        margin-right: 40px;
       }
 
       &:hover {

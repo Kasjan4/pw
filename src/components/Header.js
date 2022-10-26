@@ -14,6 +14,7 @@ import './Header.scss';
 
 const Header = () => {
   const [toggleOpen, setToggleOpen] = useState(false);
+  const [dotVisible, setDotVisible] = useState(false);
   const elementOne = document.querySelector('#nav-ref');
 
   const isMobile = useMediaQuery({
@@ -44,6 +45,10 @@ const Header = () => {
     return;
   };
 
+  const handleDot = () => {
+    console.log('here');
+  };
+
   return (
     <Fragment>
       <header className="header">
@@ -51,8 +56,8 @@ const Header = () => {
           KH
         </Link>
 
-        <Fade delay={200} top>
-          <nav className="header__nav">
+        <nav className="header__nav">
+          <Fade duration={500} when={dotVisible} spy={dotVisible} left>
             <Link
               className="header__nav-item--dot"
               activeClass="header__nav-item--dot--active"
@@ -61,9 +66,13 @@ const Header = () => {
               smooth
               duration={500}
               offset={-100}
+              onSetActive={() => setDotVisible(true)}
+              onSetInactive={() => setDotVisible(false)}
             >
               {dot}
             </Link>
+          </Fade>
+          <Fade right>
             <Link
               className="header__nav-item"
               activeClass="header__nav-item--active"
@@ -75,6 +84,8 @@ const Header = () => {
             >
               Skills
             </Link>
+          </Fade>
+          <Fade right delay={200}>
             <Link
               className="header__nav-item"
               activeClass="header__nav-item--active"
@@ -86,9 +97,12 @@ const Header = () => {
             >
               Experience
             </Link>
+          </Fade>
+          <Fade right delay={400}>
             <Link
               className="header__nav-item"
               activeClass="header__nav-item--active"
+              style={{ marginRight: 0 }}
               to="contact"
               spy
               smooth
@@ -97,8 +111,8 @@ const Header = () => {
             >
               Contact
             </Link>
-          </nav>
-        </Fade>
+          </Fade>
+        </nav>
 
         <Fade delay={200} right>
           <button className="nav__toggle" onClick={(e) => handleToggle(e)}>
