@@ -8,6 +8,7 @@ import delikatesy from '../../src/img/delikatesy.png';
 import baranski from '../../src/img/baranski.png';
 import medicover from '../../src/img/medicover.png';
 import ga from '../../src/img/ga.png';
+import largo from '../../src/img/largo.png';
 
 const Experience = () => {
   const title = (
@@ -35,6 +36,14 @@ const Experience = () => {
       src: ga,
       alt: 'General Assembly',
       name: 'General Assembly',
+      empty: false,
+    },
+    {
+      id: 7,
+      href: 'https://largo-serwis.pl/',
+      src: largo,
+      alt: 'Largo Serwis',
+      name: 'Largo Serwis',
       empty: false,
     },
   ];
