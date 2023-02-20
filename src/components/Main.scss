@@ -9,11 +9,12 @@
     @include breakpoint('l') {
       display: block;
       position: fixed;
-      bottom: 100px;
+      bottom: 150px;
       right: 100px;
     }
 
     svg {
+      color: $color--orange;
       display: none;
 
       @include breakpoint('l') {

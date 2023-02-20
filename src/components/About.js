@@ -42,7 +42,7 @@ const About = () => {
 
       <div className="role-container">
         <span>
-          <Fade delay={500}>Software</Fade>
+          <Fade delay={500}>Frontend</Fade>
         </span>
         <span>
           <Fade delay={700}>Developer</Fade>

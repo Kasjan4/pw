@@ -25,16 +25,6 @@ const Header = () => {
   const linkedin = <FontAwesomeIcon icon={faLinkedinIn} size="2x" />;
   const github = <FontAwesomeIcon icon={faGithub} size="2x" />;
 
-  const handleLogo = () => {
-    if (isMobile) {
-      if (toggleOpen) {
-        unlock(elementOne);
-        setToggleOpen(false);
-      }
-    }
-    return;
-  };
-
   const handleToggle = (e) => {
     e.preventDefault();
 
@@ -45,17 +35,9 @@ const Header = () => {
     return;
   };
 
-  const handleDot = () => {
-    console.log('here');
-  };
-
   return (
     <Fragment>
       <header className="header">
-        <Link className="header__logo" to="kh" spy smooth duration={500} offset={-60} onClick={handleLogo}>
-          KH
-        </Link>
-
         <nav className="header__nav">
           <Fade duration={500} when={dotVisible} spy={dotVisible} left>
             <Link
@@ -80,7 +62,7 @@ const Header = () => {
               spy
               smooth
               duration={500}
-              offset={-100}
+              offset={-50}
             >
               Skills
             </Link>
@@ -93,7 +75,7 @@ const Header = () => {
               spy
               smooth
               duration={500}
-              offset={-100}
+              offset={-50}
             >
               Experience
             </Link>
@@ -107,7 +89,7 @@ const Header = () => {
               spy
               smooth
               duration={500}
-              offset={-100}
+              offset={-50}
             >
               Contact
             </Link>
