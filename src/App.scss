@@ -28,6 +28,12 @@
   src: url('./fonts/exotic.woff') format('woff');
 }
 
+* {
+  &::selection {
+    background: $color--orange;
+  }
+}
+
 h1,
 h2,
 h3,
@@ -43,6 +49,7 @@ p {
 h1 {
   font-weight: 100;
   line-height: 1;
+  user-select: none;
 }
 
 h2 {

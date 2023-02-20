@@ -8,7 +8,7 @@ const Footer = () => {
     <Fade up>
       <footer>
         <div className="footer__copyright">
-          © Kasjan Hinc, <span>All Rights Reserved</span>
+          <span>©</span> Kasjan Hinc, <span>All Rights Reserved</span>
         </div>
       </footer>
     </Fade>

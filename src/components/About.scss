@@ -2,105 +2,109 @@
 @import '../styles/variables.scss';
 
 .kh {
-  margin: 0 10px;
+  #kh {
+    @include breakpoint('xl') {
+      margin-bottom: 200px;
+    }
 
-  p {
-    color: $text-dimmed;
-    font-size: 2rem;
-    margin-bottom: 10px;
-    width: 100%;
-    text-align: left;
-    min-height: 29px;
-    margin-left: 30px;
-    letter-spacing: 2px;
-    line-height: 1.5;
+    p {
+      color: $text-dimmed;
+      font-size: 2rem;
+      margin-bottom: 10px;
+      width: 100%;
+      text-align: left;
+      min-height: 29px;
+      margin-left: 30px;
+      letter-spacing: 2px;
+      line-height: 1.5;
 
-    @include breakpoint('s') {
-      margin-left: 50px;
-      margin-bottom: 0;
+      @include breakpoint('s') {
+        margin-left: 50px;
+        margin-bottom: 0;
+      }
+
+      @include breakpoint('l') {
+        margin-left: 70px;
+        min-height: 48px;
+      }
+
+      span {
+        font-weight: 100;
+      }
+    }
+
+    h1 {
+      font-family: 'Exotic', 'Helvetica', arial, sans-serif;
+      text-transform: uppercase;
+      font-size: 5rem;
+      color: $color--orange;
+      letter-spacing: 6px;
+      margin-bottom: 10px;
+      padding: 0 20px;
+      line-height: 0.9;
+      background: #ffb76b;
+      background: radial-gradient(
+        circle farthest-side at center center,
+        #ffb76b 0%,
+        #ffa73d 30%,
+        #ff671f 60%,
+        #ff7f04 100%
+      );
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+
+      @include breakpoint('xs') {
+        font-size: 6rem;
+      }
+
+      @include breakpoint('s') {
+        line-height: 1;
+      }
+
+      @include breakpoint('m') {
+        font-size: 7.5rem;
+        margin-bottom: 0;
+      }
+
+      @include breakpoint('l') {
+        font-size: 12rem;
+      }
+    }
+
+    .role-container {
+      color: $text-dimmed;
+      display: flex;
+      font-size: 1.2rem;
+      text-align: left;
+      letter-spacing: 4px;
+      line-height: 1.5;
+      margin-left: 30px;
+      margin-bottom: 28px;
+
+      @include breakpoint('s') {
+        min-height: 48px;
+        margin-left: 50px;
+      }
+
+      @include breakpoint('l') {
+        font-size: 1.5rem;
+        margin-left: 70px;
+      }
+
+      span:nth-of-type(1) {
+        font-weight: 200;
+        margin-right: 5px;
+      }
+
+      span:nth-of-type(2) {
+        font-weight: 300;
+      }
     }
 
     @include breakpoint('l') {
-      margin-left: 70px;
-      min-height: 48px;
+      margin-left: 45px;
+      margin-right: 45px;
     }
-
-    span {
-      font-weight: 100;
-    }
-  }
-
-  h1 {
-    font-family: 'Exotic', 'Helvetica', arial, sans-serif;
-    text-transform: uppercase;
-    font-size: 5rem;
-    color: $color--orange;
-    letter-spacing: 6px;
-    margin-bottom: 10px;
-    padding: 0 20px;
-    line-height: 0.9;
-    background: #ffb76b;
-    background: radial-gradient(
-      circle farthest-side at center center,
-      #ffb76b 0%,
-      #ffa73d 30%,
-      #ff671f 60%,
-      #ff7f04 100%
-    );
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-
-    @include breakpoint('xs') {
-      font-size: 6rem;
-    }
-
-    @include breakpoint('s') {
-      line-height: 1;
-    }
-
-    @include breakpoint('m') {
-      font-size: 7.5rem;
-      margin-bottom: 0;
-    }
-
-    @include breakpoint('l') {
-      font-size: 12rem;
-    }
-  }
-
-  .role-container {
-    color: $text-dimmed;
-    display: flex;
-    font-size: 1.2rem;
-    text-align: left;
-    letter-spacing: 4px;
-    line-height: 1.5;
-    margin-left: 30px;
-    margin-bottom: 28px;
-
-    @include breakpoint('s') {
-      min-height: 48px;
-      margin-left: 50px;
-    }
-
-    @include breakpoint('l') {
-      font-size: 1.5rem;
-      margin-left: 70px;
-    }
-
-    span:nth-of-type(1) {
-      font-weight: 200;
-      margin-right: 5px;
-    }
-
-    span:nth-of-type(2) {
-      font-weight: 300;
-    }
-  }
-
-  @include breakpoint('l') {
-    margin-left: 45px;
-    margin-right: 45px;
   }
 }

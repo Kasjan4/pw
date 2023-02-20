@@ -22,6 +22,7 @@
 
 .kh {
   padding: 45px 0;
+  justify-content: center;
 
   @include breakpoint('xl') {
     height: 100vh;

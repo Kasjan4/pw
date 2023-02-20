@@ -20,7 +20,6 @@ footer:not(.nav__footer) {
   color: $text-dimmed;
   pointer-events: none;
   width: 100%;
-  font-size: 0.875rem;
   text-align: center;
   border-top: 1px solid #151515;
   padding-top: 30px;
@@ -29,5 +28,10 @@ footer:not(.nav__footer) {
 
   span {
     font-weight: 200;
+
+    &:first-of-type {
+      font-weight: 800;
+      color: $color--orange;
+    }
   }
 }
